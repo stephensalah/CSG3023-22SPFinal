@@ -69,6 +69,10 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Text scoreGT=scoreTxt.GetComponent<Text>();
+        scoreGT.text="Score: "+score;
+        Text ballGT=ballTxt.GetComponent<Text>();
+        ballGT.text="Balls: "+numBalls;
         
         if (isInPlay==false){
             Vector3 pos=this.transform.position;
@@ -91,7 +95,7 @@ public class Ball : MonoBehaviour
     {
         if (isInPlay==true){
             
-            initialForce.y=speed;
+            rb.velocity=speed*rb.velocity.normalized;
         }
 
 
@@ -102,6 +106,10 @@ public class Ball : MonoBehaviour
         
     }
     private void OnCollisionEnter(Collision collision){
+        if (audioSource!=null){
+            audioSource.PlayOneShot(sound);
+        }
+        
         GameObject GO=collision.gameObject;
         if (GO.tag=="Brick"){
             score+=100;
