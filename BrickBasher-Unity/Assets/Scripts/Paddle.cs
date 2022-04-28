@@ -17,11 +17,20 @@ using UnityEngine;
 public class Paddle : MonoBehaviour
 {
     public float speed = 10; //speed of paddle
+    
+
+    
 
 
     // Update is called once per frame
     void Update()
     {
+
+        float xAxis=Input.GetAxis("Horizontal");
+        
+        Vector2 pos= this.transform.position;
+        pos.x+=xAxis*speed*Time.deltaTime;
+        transform.position=pos;
 
     }//end Update()
 }

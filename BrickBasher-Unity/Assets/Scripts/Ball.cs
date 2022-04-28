@@ -12,14 +12,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class Ball : MonoBehaviour
 {
-    [Header("General Settings")]
+    //[Header("General Settings")]
+
+    
 
 
-    [Header("Ball Settings")]
+
+    //[Header("Ball Settings")]
+    
+    
+
    
 
 
@@ -36,7 +43,7 @@ public class Ball : MonoBehaviour
         // Start is called before the first frame update
         void Start()
     {
-        SetStartingPos(); //set the starting position
+        //SetStartingPos(); //set the starting position
 
     }//end Start()
 
@@ -54,7 +61,7 @@ public class Ball : MonoBehaviour
 
     }//end LateUpdate()
 
-
+    /*
     void SetStartingPos()
     {
         isInPlay = false;//ball is not in play
@@ -67,7 +74,7 @@ public class Ball : MonoBehaviour
         transform.position = pos;//set starting position of the ball 
     }//end SetStartingPos()
 
-
+    */
 
 
 
